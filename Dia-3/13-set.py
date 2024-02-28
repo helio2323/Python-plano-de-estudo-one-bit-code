@@ -23,3 +23,4 @@ gameSet.remove(True)
 print(gameSet)
 
 # - Nao possibilida recuperar valores via fatiamento ou slice
+
