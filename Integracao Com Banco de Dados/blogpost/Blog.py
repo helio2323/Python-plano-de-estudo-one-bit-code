@@ -23,4 +23,31 @@ def add_user():
      session.commit()
      print('Usário Cadastrado com sucesso!')
      
-add_user()
+def add_post():
+     print('Cadastro de Post')
+     title = input('Título:\n ')
+     content = input('Conteúdo:\n ')
+     user_id = int(input('ID do Usuário:\n '))
+     user = session.query(User).filter_by(id=user_id).first()
+     if user:
+        post = Post(title, content, user_id)
+        session.add(post)
+        session.commit()
+        print('Post Cadastrado com sucesso!')
+     else:
+        print('Usário não encontrado!')
+        
+        
+def query_users_posts():
+    users = session.query(User).join(User.posts).order_by(User.name).all()
+    for user in users:
+        print('----------------------')
+        print(f'Usuário: {user.name} - Email: {user.email}')
+
+        posts = session.query(Post).filter_by(user_id=user.id).all()
+        for post in posts:
+
+            print(f'Título: {post.title} - Conteúdo: {post.content}')
+            print('----------------------')
+            
+
