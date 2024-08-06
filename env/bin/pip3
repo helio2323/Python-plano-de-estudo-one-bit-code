@@ -1,4 +1,4 @@
-#!/home/helio/Documentos/GitHub/Python-plano-de-estudo-one-bit-code/env/bin/python
+#!/home/helio-fernandes/Documentos/GitHub/Python-plano-de-estudo-one-bit-code/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
